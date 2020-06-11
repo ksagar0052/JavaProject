@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	musiTech
+</title>
+	<h1>musiTech</h1>
+<style>
+label {
+display: block;
+font-family: 'Monteserrat', sans-serif;
+}
+
+body {
+padding-left: 250px;
+background-image: linear-gradient(to bottom right, CornflowerBlue, pink);
+color: white;
+}
+
+h1, h3, h4, a {
+font-family: 'Balsamiq Sans', cursive;
+}
+
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+p {
+font-family: 'Monteserrat', sans-serif;
+}
+
+
+button {
+  background-color: DarkOrchid;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  font-family: 'Balsamiq Sans', cursive;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<br> 
+	<h3>The algorithm that brings Brooklyn Tech students together through music</h3>
+	
+	<h4>Answer this series of questions to the best of your ability. We will then find a fellow Tech student who has the most similar responses to yours!</h4>
+	
+	<form id="form1">
+	
+	<p>What best describes your mood for at least the current week?</p>
+<label for="hap_yes"><input type="radio" value="30" name="happy" id="hap_yes" />I've been mostly happy.</label> <br>
+<label for="hap_neu"><input type="radio" value="20" name="happy" id="hap_neu" />I've been feeling pretty neutral.</label> <br>
+<label for="hap_no"><input type="radio" value="10" name="happy" id="hap_no" />I've been pretty unhappy.</label><br>
+<br>
+<p>Have you felt stressed out for any reason lately?</p>
+<label for="str_yes"><input type="radio" value="10" name="stressed" id="str_yes" />I've been pretty stressed lately.</label> <br>
+<label for="str_neu"><input type="radio" value="20"name="stressed" id="str_neu" />I've been pretty neutral.</label><br>
+<label for="str_no"><input type="radio" value="30"name="stressed" id="str_no" />I've been pretty relaxed.</label><br>
+<br>
+<p>How well-rested have you been these past few days?</p>
+<label for="rest_yes"><input type="radio"value="30" name="rest" id="rest_yes" />I've been getting a good amount of sleep lately.</label> <br>
+<label for="rest_neu"><input type="radio" value="20"name="rest" id="rest_neu" />I've been feeling okay in terms of tiredness.</label> <br>
+<label for="rest_no"><input type="radio" value="10"name="rest" id="rest_no" />I definitely need to get more sleep.</label><br>
+<br>
+<p>Has anything made you particularly angry recently?</p>
+<label for="ang_yes"><input type="radio" value="10"name="angry" id="ang_yes" />I've been pretty riled up these past few days.</label> <br>
+<label for="ang_neu"><input type="radio" value="20"name="angry" id="ang_neu" />I've been feeling pretty neutral.</label> <br>
+<label for="ang_no"><input type="radio" value="30"name="angry" id="ang_no" />I have felt pretty calm, actually.</label><br>
+<br>
+<p>Would you say that you've felt depressed in any way?</p>
+<label for="dep_yes"><input type="radio" value="10"name="depressed" id="dep_yes" />I've been pretty down in the dumps lately.</label> <br>
+<label for="dep_neu"><input type="radio" value="20"name="depressed" id="dep_neu" />I've been feeling pretty neutral.</label> <br>
+<label for="dep_no"><input type="radio" value="30"name="depressed" id="dep_no" />I feel pretty happy with how my life is going right now.</label><br>
+<br>
+<p>What genre of music do you find yourself turning to the most?</p>
+<label for="gen_pop"><input type="radio" value="1"name="genre" id="gen_pop" />Pop</label> <br>
+<label for="gen_hiphop"><input type="radio" value="2"name="genre" id="gen_hiphop" />Hip-Hop</label> <br>
+<label for="gen_rock"><input type="radio" value="3" name="genre" id="gen_rock" />Rock</label><br>
+<label for="gen_alt"><input type="radio"  value="4"name="genre" id="gen_alt" />Alternative</label><br>
+<label for="gen_elec"><input type="radio" value="5" name="genre" id="gen_elec" />Electronic</label><br>
+<label for="gen_orch"><input type="radio" value="6" name="genre" id="gen_orch" />Orchestral</label><br>
+<label for="gen_rb"><input type="radio" value="7" name="genre" id="gen_rb" />R&B</label><br>
+<br>
+
+<button type="submit" value="Submit">Submit</button>
+
+<br> <br>
+<a href="javaproject.html">Home</a>
+ </form>
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+       happy = parseInt(document.querySelector('input[name = "happy"]:checked').value);
+	   stressed = parseInt(document.querySelector('input[name = "stressed"]:checked').value);
+	   rest = parseInt(document.querySelector('input[name = "rest"]:checked').value);
+	   angry = parseInt(document.querySelector('input[name = "angry"]:checked').value);
+	   depressed = parseInt(document.querySelector('input[name = "depressed"]:checked').value);
+	   genre = parseInt(document.querySelector('input[name = "genre"]:checked').value);
+	   
+	   score = happy + stressed + rest + angry + depressed + genre;
+	   
+	
+if (score >=50 && score < 100) {
+	if (score % 10 == 1) 
+		{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, pop, is just like Annie, who feels similar about her life at the moment. Feel free to reach out to her, even if it's to talk about the new Lady Gaga album! We can all use a friend by our side."};
+	if (score % 10 ==2) 
+		{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, pop, is just like Frank, who feels similar about his life at the moment. Feel free to reach out to him, even if it's to talk about the new Megan Thee Stallion album! We can all use a friend by our side."};
+	if (score % 10 ==3)
+		{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, rock, is just like Malcolm, who feels similar about his life at the moment. Feel free to reach out to him, even if it's to talk about your favorite Guns 'n Roses album! We can all use a friend by our side."};
+	if (score % 10 ==4)
+		{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, alternative, is just like Winston, who feels similar about his life at the moment. Feel free to reach out to him, even if it's to talk about new Billie Eilish music! We can all use a friend by our side."};
+	if (score % 10 == 5)
+		{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, electronic, is just like Ian, who feels similar about his life at the moment. Feel free to reach out to him, even if it's to talk about new Marshmello music! We can all use a friend by our side."};
+	if (score % 10 == 6)
+		{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, orchestral, is just like Arthur, who feels similar about his life at the moment. Feel free to reach out to him, even if it's to talk about the new Broadway musical soundtrack! We can all use a friend by our side."};
+	if (score % 10 == 7)
+	{ result2= "It seems that you aren't the best person you can be in the momemt. That is totally okay! No matter how stressed or demotivated you may be, you will always dust yourself off and keep moving forward. We also happened to notice that your music taste, R&B, is just like Philip, who feels similar about his life at the moment. Feel free to reach out to him, even if it's to talk about the new Doja Cat album! We can all use a friend by our side."};
+}
+
+else if (score >=100 && score <150) {
+	if (score % 10 == 1) 
+		{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Bobby also loves pop, and he's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+	if (score % 10 ==2) 
+			{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Leah also loves rap, and she's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+	if (score % 10 ==3)
+			{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Sally also loves rock, and she's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+	if (score % 10 == 4)
+			{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Otto also loves alternative, and he's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+	if (score % 10 == 5)
+			{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Theresa also loves EDM, and she's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+	if (score % 10 == 6)
+			{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Brianna also loves orchestral music, and she's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+	if (score % 10 == 7) 	
+		{ result2 = "You're doing okay, and that's great! Sure, you may feel simply content with certain parts of your life, but it's always important to focus on the things that truly bring you joy. Emma also loves R&B, and she's been feeling the same way as you--it can't hurt to start a conversation. Introduce each other to new artists on the rise!"};
+}
+
+else {
+	if (score % 10 == 1) 
+		{ result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know Emily--she's pretty happy as well, and you both really love pop!" };
+	if (score % 10 == 2)
+	 	{ result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know Nico--he's pretty happy as well, and you both really love hip-hop!"}; 
+	if (score % 10 == 3)
+	 	 { result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know Dallon--he's pretty happy as well, and you both really love rock!"}; 
+	if (score % 10 == 4)
+	 	 { result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know Vicky--she's pretty happy as well, and you both really love alternative!"};
+	if (score % 10 == 5)
+		  { result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know John--he's pretty happy as well, and you both really love EDM!"}; 
+	if (score % 10 ==6)
+		 { result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know Joey--he's pretty happy as well, and you both really love orchestral music!"}; 
+	if (score % 10 == 7) 
+	{ result2="We're actually so glad you're so satisfied with how your life is going! Positivity truly prevails, and we're glad that you have such an optimistic outlook. Take this opportunity to get to know Caleb--he's pretty happy as well, and you both really love R&B!"}; }
+
+
+	document.getElementById("sc2").innerHTML = result2; 
+
+	   return false; 
+} 
+
+</script>
+
+<h3 id="sc2"></h3>
+
+
+</body>
+</html>
+
+
